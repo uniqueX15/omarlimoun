@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Omar Limoun — Ultra Creative Portfolio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+<!-- Bootstrap -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<!-- Google Font -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  font-family:'Poppins',sans-serif;
+  background:#020617;
+  color:white;
+  overflow-x:hidden;
+}
+
+/* ANIMATED BACKGROUND */
+.bg{
+  position:fixed;
+  inset:0;
+  background:
+    radial-gradient(circle at 10% 10%, #38bdf8, transparent 35%),
+    radial-gradient(circle at 90% 90%, #6366f1, transparent 35%);
+  animation:bgMove 8s infinite alternate;
+  z-index:-1;
+}
+
+@keyframes bgMove{
+  0%{filter:hue-rotate(0deg);}
+  100%{filter:hue-rotate(60deg);}
+}
+
+/* HERO */
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+}
+
+.hero h1{
+  font-size:3.5rem;
+  font-weight:700;
+  animation:fadeUp 1.5s ease;
+}
+
+.hero span{
+  color:#38bdf8;
+}
+
+.hero p{
+  font-size:1.3rem;
+  margin-top:15px;
+  animation:fadeUp 2s ease;
+}
+
+@keyframes fadeUp{
+  from{opacity:0; transform:translateY(50px);}
+  to{opacity:1; transform:translateY(0);}
+}
+
+/* BUTTON */
+.btn-glow{
+  margin-top:35px;
+  padding:14px 45px;
+  border-radius:50px;
+  background:#38bdf8;
+  color:#020617;
+  font-weight:600;
+  box-shadow:0 0 20px #38bdf8;
+  transition:0.4s;
+}
+
+.btn-glow:hover{
+  transform:scale(1.15);
+  box-shadow:0 0 40px #38bdf8;
+}
+
+/* SECTIONS */
+section{
+  padding:120px 0;
+}
+
+/* CARDS */
+.card-pro{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(12px);
+  border-radius:25px;
+  padding:35px;
+  text-align:center;
+  transition:0.5s;
+}
+
+.card-pro:hover{
+  transform:translateY(-20px) rotateX(10deg);
+  box-shadow:0 30px 60px rgba(56,189,248,0.4);
+}
+
+/* MUSIC BUTTON */
+.music-btn{
+  position:fixed;
+  bottom:30px;
+  right:30px;
+  background:#38bdf8;
+  color:#020617;
+  padding:15px;
+  border-radius:50%;
+  cursor:pointer;
+  box-shadow:0 0 20px #38bdf8;
+  z-index:1000;
+}
+
+/* FOOTER */
+footer{
+  padding:40px;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,0.1);
+}
+</style>
+</head>
+
+<body>
+
+<div class="bg"></div>
+
+<!-- MUSIC -->
+<audio id="bgMusic" loop>
+  <source src="eg.mp3" type="audio/mpeg">
+</audio>
+<div class="music-btn" onclick="toggleMusic()">🎵</div>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="container">
+    <h1>I’m <span>Omar Limoun</span></h1>
+    <p>DJ • Web Developer • Video Editor</p>
+    <a href="#contact" class="btn btn-glow">Enter My World</a>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section>
+  <div class="container">
+    <h2 class="text-center mb-5">What I Do</h2>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card-pro">
+          <h4>🎧 DJ</h4>
+          <p>High energy music & vibes.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-pro">
+          <h4>💻 Web Dev</h4>
+          <p>Creative & animated websites.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-pro">
+          <h4>🎬 Video Edit</h4>
+          <p>Cinematic visual storytelling.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact">
+  <div class="container text-center">
+    <h2>Contact Me</h2>
+    <p>📧 <a href="mailto:omarlimonaol1@gmail.com">omarlimonaol1@gmail.com</a></p>
+    <p>📸 <a href="https://instagram.com/uniquue_x1" target="_blank">@uniquue_x1</a></p>
+    <p>💼 <a href="https://www.linkedin.com/in/omar-limoun-35835b328/" target="">Omar Limoun</a></p>
+  </div>
+</section>
+
+<footer>
+  © 2026 Omar Limoun — Ultra Creative Portfolio
+</footer>
+
+<script>
+/* Music */
+const music = document.getElementById("bgMusic");
+let playing = false;
+
+function toggleMusic(){
+  if(!playing){
+    music.play();
+    playing = true;
+  }else{
+    music.pause();
+    playing = false;
+  }
+}
+</script>
+
+</body>
+</html>
